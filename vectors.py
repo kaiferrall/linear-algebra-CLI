@@ -11,12 +11,8 @@ def read_vector():
         raise e
 
 
-def dot_product(data):
-    
+def dot_product(v1, v2):
     try:
-        v1 = data[0]
-        v2 = data[1]
-
         if len(v1) != len(v2):
             raise Exception("Vectors must be same length.")
 
