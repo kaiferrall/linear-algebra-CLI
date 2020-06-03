@@ -18,7 +18,7 @@ def get_instruction_type(instr: str):
     try:
         operations = {
             'det': r'^det\([0-9. ,]*\):$',
-            'dprod': r'^[0-9 .]*x[0-9 .]*$'
+            'dprod': r'^[0-9 .]*x[0-9 .]*:$'
         }
 
         for key, regex in operations.items():
