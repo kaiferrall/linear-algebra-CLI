@@ -1,7 +1,7 @@
 import sys
 import re
-from matrices import read_matrix, determinant
-from vectors import read_vector, dot_product
+from matrices import Matrices
+from vectors import Vectors
 
 def help():
     operations = {
@@ -14,11 +14,12 @@ def help():
     for key, value in operations.items():
         print('{} -- {}\n'.format(key, value))
 
+
 def get_instruction_type(instr: str):
     try:
         operations = {
             'det': r'^det\([0-9. ,]*\):$',
-            'dprod': r'^[0-9 .]*x[0-9 .]*:$'
+            'dprod': r'^([0-9 .]*x[0-9 .]*)*:$'
         }
 
         for key, regex in operations.items():
@@ -34,13 +35,16 @@ def get_instruction_type(instr: str):
     except:
         print('Invalid instruction format.')
 
+
 def calculate(instr, type):
     try:
     
         if type == 'det':
-            matrix = read_matrix(instr[ 4 : -2 ])
-            return determinant(matrix)
-    
+            return Matrices().determinant(instr)
+
+        if type == 'dprod':
+            return Vectors().dot_product(instr)
+
     except Exception as e:
         print(e)
 
@@ -60,4 +64,4 @@ if __name__ == '__main__':
 
         result = calculate(instr, instr_type)
 
-        print(result)
+        print('\nanswer: {}\n'.format(result))
