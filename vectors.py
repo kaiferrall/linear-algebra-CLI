@@ -15,7 +15,6 @@ class Vectors():
             return res
 
         except Exception as e:
-            print(e)
             raise Exception('Invalid vector string.')
 
     def read_dot_product(self, instr):
@@ -37,7 +36,6 @@ class Vectors():
             return vectors
 
         except Exception as e:
-            print(e)
             raise e
 
     def dot_product(self, instr):

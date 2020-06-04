@@ -18,7 +18,7 @@ class Matrices():
     def determinant(self, instr):
         try:
 
-            matrix = self.read_matrix(instr[ 4 : -1 ])
+            matrix = self.read_matrix(instr[ 4 : -2 ])
             det = 0
             
             r = len(matrix)
