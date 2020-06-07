@@ -1,5 +1,6 @@
 import sys
 import re
+from output import display
 from matrices import product, determinant
 
 def help():
@@ -17,8 +18,8 @@ def help():
 def get_instruction_type(instr: str):
     try:
         operations = {
-            'det': r'^det\([0-9. ,]*\):$',
-            'prod': r'^[0-9,. x]*:$'
+            'det': r'^det\([0-9., -]*\):$',
+            'prod': r'^[0-9,.x -]*:$'
         }
 
         for key, regex in operations.items():
@@ -63,4 +64,4 @@ if __name__ == '__main__':
 
         answer = calculate(instr, instr_type)
 
-        print('\nanswer: {}\n'.format(answer))
+        display(answer)

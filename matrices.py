@@ -2,7 +2,13 @@ from vectors import read_vector
 
 def dot_product(v1, v2):
         try:
-            if len(v1) != len(v2):
+            if len(v1) == 1:
+                return [ v1[0] * nv2 for nv2 in v2 ]
+            
+            elif len(v2) == 1:
+                return [ v2[0] * nv1 for nv1 in v1 ]
+                
+            elif len(v1) != len(v2):
                 raise Exception('Vectors must have same length.')
             
             return sum([v1[i] * v2[i] for i in range(len(v1))])
@@ -44,23 +50,6 @@ def matrix_multiplication(m1, m2):
     except Exception as e:
         raise e
 
-def read_vector(vs):
-        try:
-
-            v = vs.split(' ')
-            res = []
-
-            for n in v:
-                try:
-                    res.append(float(n))
-
-                except Exception as e:
-                    pass
-
-            return res
-
-        except Exception as e:
-            raise Exception('Invalid vector string.')
 
 def read_matrix(data):
     try:

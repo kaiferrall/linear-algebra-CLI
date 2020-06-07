@@ -1,5 +1,5 @@
 
-def read_vector(self, vs):
+def read_vector(vs):
     try:
 
         v = vs.split(' ')
@@ -15,4 +15,3 @@ def read_vector(self, vs):
 
     except Exception as e:
         raise Exception('Invalid vector string.')
-
