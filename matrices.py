@@ -119,6 +119,5 @@ def determinant(instr):
         return det
     
     except Exception as e:
-        print(e)
-
+        raise Exception('Couldn\'t caclulate determinant')
 
