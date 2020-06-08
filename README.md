@@ -14,4 +14,4 @@ To allow for quick checking of tedious linear algebra operations.
 
 # Use 
 - Run main.py and enter in operation with correct syntax, then hit enter.
-- For help with syntax run main.py with -help flag.
+- For help with syntax run main.py with -help flag. (e.g det(1 2, 3 4):)
