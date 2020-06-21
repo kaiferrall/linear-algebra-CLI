@@ -7,8 +7,13 @@ def display(data):
 
         for r in data:
             for c in r:    
-                print(c, end=' ')
-            
+                if c.imag == 0:
+                    print(c.real, end=' ')
+                elif c.real == 0:
+                    print(c.imag, end=' ')
+                else:
+                    print(c, end=' ')
+
             print('\n')
 
     elif type(data) == float:

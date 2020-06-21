@@ -1,23 +1,60 @@
-from vectors import read_vector
+'''
+    @ARGS:
+    @RETURN:
+    @RAISES: 
+'''
+def read_vector(vs):
 
-def dot_product(v1, v2):
-        try:
-            if len(v1) == 1:
-                return [ v1[0] * nv2 for nv2 in v2 ]
-            
-            elif len(v2) == 1:
-                return [ v2[0] * nv1 for nv1 in v1 ]
-                
-            elif len(v1) != len(v2):
-                raise Exception('Vectors must have same length.')
-            
-            return sum([v1[i] * v2[i] for i in range(len(v1))])
-
-        except Exception as e:
-            raise e
-
-def matrix_multiplication(m1, m2):
     try:
+
+        v = vs.split(' ')
+        res = []
+
+        for n in v:
+            try:
+                res.append(complex(n))
+            except Exception as e:
+                pass
+
+        return res
+
+    except Exception as e:
+
+        raise Exception('Invalid vector string.')
+
+'''
+    @ARGS:
+    @RETURN:
+    @RAISES: 
+'''
+def dot(v1, v2):
+
+    try:
+
+        if len(v1) == 1:
+            return [ v1[0] * nv2 for nv2 in v2 ]
+        
+        elif len(v2) == 1:
+            return [ v2[0] * nv1 for nv1 in v1 ]
+            
+        elif len(v1) != len(v2):
+            raise Exception('Vectors must have same length.')
+        
+        return sum([v1[i] * v2[i] for i in range(len(v1))])
+
+    except Exception as e:
+
+        raise e
+
+'''
+    @ARGS:
+    @RETURN:
+    @RAISES: 
+'''
+def matrix_multiplication(m1, m2):
+    
+    try:
+
         r1, c1 = len(m1), len(m1[0])
         r2, c2 = len(m2), len(m2[0])
 
@@ -25,13 +62,13 @@ def matrix_multiplication(m1, m2):
         if r1 == 1:
             result = [0] * r2
             for j in range(r2):
-                result[j] = dot_product(m2[j][:], m1[0])                
+                result[j] = dot(m2[j][:], m1[0])                
             return [ result ]
 
         elif r2 == 1:
             result = [0] * r1
             for j in range(r1):
-                result[j] = dot_product(m1[j][:], m2[0])                
+                result[j] = dot(m1[j][:], m2[0])                
             return [ result ]
 
         if c1 != r2:
@@ -43,16 +80,23 @@ def matrix_multiplication(m1, m2):
             for j in range(r1):
 
                 v1, v2 = m1[j][:], [ m2[k][i] for k in range(r2) ]
-                result[j][i] = dot_product(v1, v2)
+                result[j][i] = dot(v1, v2)
         
         return result
     
     except Exception as e:
+
         raise e
 
-
+'''
+    @ARGS:
+    @RETURN:
+    @RAISES: 
+'''
 def read_matrix(data):
+
     try:
+
         rows = data.split(',')
         matrix = []
 
@@ -68,8 +112,14 @@ def read_matrix(data):
         return matrix    
 
     except Exception as e:
+
         raise e
 
+'''
+    @ARGS:
+    @RETURN:
+    @RAISES: 
+'''
 def product(instr):
 
     matrix_strings = instr[:-1].split('x')
@@ -88,9 +138,13 @@ def product(instr):
     
     return product
     
+'''
+    @ARGS:
+    @RETURN:
+    @RAISES: 
+'''
+def det(instr):
 
-
-def determinant(instr):
     try:
 
         matrix = read_matrix(instr[ 4 : -2 ])
@@ -104,7 +158,7 @@ def determinant(instr):
                 raise Exception('Not square.')
 
         if (r == 2 and c == 2):
-            return (matrix[0][0]*matrix[1][1]) - (matrix[0][1]*matrix[1][0])
+            return (matrix[0][0] * matrix[1][1]) - (matrix[0][1] * matrix[1][0])
 
         else:
             for a in range(0, r):
@@ -114,10 +168,11 @@ def determinant(instr):
                 if a % 2 == 0:
                     det = det + (matrix[0][a] * determinant(sub_matrix))
                 else:
-                    det = det - (matrix[0][a] *determinant(sub_matrix))
+                    det = det - (matrix[0][a] * determinant(sub_matrix))
     
         return det
     
     except Exception as e:
+
         raise Exception('Couldn\'t caclulate determinant')
 
