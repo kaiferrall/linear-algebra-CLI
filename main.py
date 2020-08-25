@@ -1,7 +1,7 @@
 import sys
 import re
-from output import display
-from __matrices import product, det
+from modules.__output import display
+from modules.__matrices import product, det
 
 def help():
 
@@ -16,13 +16,13 @@ def help():
         print('{} -- {}\n'.format(key, value))
 
 
-def get_instruction_type(instr: str):
+def get_instruction_type(instr):
     
     try:
 
         operations = {
             'det': r'^det\([0-9., -]*\):$',
-            'prod': r'^[0-9,.x -]*:$'
+            'prod': r'^[0-9,. \-+j]*x[0-9,. \-+j]*:$'
         }
 
         for key, regex in operations.items():
