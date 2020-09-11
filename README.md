@@ -13,5 +13,5 @@ To allow for quick checking of tedious linear algebra operations.
 </ul>
 
 # Use 
-- Run main.py and enter in operation with correct syntax, then hit enter.
-- For help with syntax run main.py with -help flag.
+- Run app.py and enter in operation with correct syntax, then hit enter.
+- Use -help flag to see operation syntax.
