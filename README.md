@@ -15,3 +15,10 @@ To allow for quick checking of tedious linear algebra operations.
 # Use 
 - Run app.py and enter in operation with correct syntax, then hit enter.
 - Use -help flag to see operation syntax.
+
+# Syntax
+<p>Representing a vector</p>
+```
+  v1 v2 v3 v4
+  
+```
