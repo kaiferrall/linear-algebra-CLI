@@ -17,8 +17,17 @@ To allow for quick checking of tedious linear algebra operations.
 - Use -help flag to see operation syntax.
 
 # Syntax
+<h4>Vectors</h4>
 <p>Representing a vector</p>
-```
-  v1 v2 v3 v4
-  
-```
+`v1 v2 v3 v4, where vi is a complex number`
+<p>e.g.</p>
+`3+i 5 2i 100`
+
+<h4>Matrices</h4>
+<p>Representing a 3x2 matrix</p>
+`m1 m2 m3, m4 m5 m6`
+<p>e.g.</p>
+`1 2+i 4, 3 5 i`
+
+<h4>Operations</h4>
+
