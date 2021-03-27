@@ -21,13 +21,25 @@ To allow for quick checking of tedious linear algebra operations.
 <p>Representing a vector</p>
 <code>v1 v2 v3 v4, where vi is a complex number</code>
 <p>e.g.</p>
-`3+i 5 2i 100`
+<code>3+i 5 2i 100</code>
 
 <h4>Matrices</h4>
 <p>Representing a 3x2 matrix</p>
-`m1 m2 m3, m4 m5 m6`
+<code>m1 m2 m3, m4 m5 m6</code>
 <p>e.g.</p>
-`1 2+i 4, 3 5 i`
+<code>1 2+i 4, 3 5 i</code>
 
-<h4>Operations</h4>
+<h4>Operations (escape character :)</h4>
+<p>Determinant of 2x2 matrix</p>
+<code>det(1 2, 3 i):</code>
+
+<p>Product 2 matrices</p>
+<code>1 2, 3 i x 1 4, 9 22:</code>
+
+<p>Product n matrices</p>
+<code>m11 m12, m13 m14 x ... x mn1 mn2, mn3 mn4:</code>
+
+
+
+
 
