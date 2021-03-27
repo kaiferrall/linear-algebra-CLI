@@ -19,7 +19,7 @@ To allow for quick checking of tedious linear algebra operations.
 # Syntax
 <h4>Vectors</h4>
 <p>Representing a vector</p>
-`v1 v2 v3 v4, where vi is a complex number`
+<code>v1 v2 v3 v4, where vi is a complex number</code>
 <p>e.g.</p>
 `3+i 5 2i 100`
 
